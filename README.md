@@ -30,6 +30,9 @@ cd Python-3.7.4
 sudo ./configure --enable-optimizations
 sudo make -j$(nproc)
 sudo make altinstall
+```
+![image](https://github.com/user-attachments/assets/cd8be04c-ce90-4538-8867-4404a84f0f32)
+```bash
 git clone https://github.com/Depth-monster/Network-Traffic-Prediction.git
 cd Network-Traffic-Prediction
 python3.7 -m venv venv
@@ -43,14 +46,20 @@ python3 main/lstm.py 60 20 16 16 16 60
 ```
 
 
-![image](https://github.com/user-attachments/assets/cd8be04c-ce90-4538-8867-4404a84f0f32)
+
 На вход подается:
-60 - look_back - Сколько предыдущих точек времени (в минутах) используется в качестве входа модели (Step Back = 60 минут) 
+60 - look_back - Сколько предыдущих точек времени (в минутах) используется в качестве входа модели (Step Back = 60 минут)
+
 20 - look_ahead - Сколько точек времени вперёд модель должна предсказать (Step Ahead = 20 минут).
+
 16 - neuron1 (encoder) - Кол-во нейронов в первом слое модели (энкодере).
+
 16 - neuron2 (decoder1) - Кол-во нейронов в первом декодере (decoder layer 1).
+
 16 - neuron3 (decoder2) - Кол-во нейронов в втором декодере (decoder layer 2).
+
 60 - time_step - Интервал между временными шагами — обычно совпадает с look_back и нужен для формирования подпапки timestep_60/ в структуре вывода.
+
 
 Что делает gru.py при запуске:
 Загружает данные (data/network_traffic.csv).
