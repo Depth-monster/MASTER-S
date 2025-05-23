@@ -62,17 +62,28 @@ python3 main/lstm.py 60 20 16 16 16 60
 
 
 Что делает gru.py при запуске:
+
 Загружает данные (data/network_traffic.csv).
+
 Формирует обучающую выборку на основе последних 60 минут.
+
 Обучает GRU-модель предсказывать 20 следующих точек.
 Архитектура модели:
+
 1 GRU-слой (16 нейронов)
+
 2 дополнительных GRU-декодера по 16 нейронов
+
 выход: TimeDistributed(Dense(1)) для предсказания временного ряда.
+
 Результаты:
+
 сохраняются в results/gru/timestep_60/lb=60_la=20_ne1=16_ne2=16_ne=16/
+
 values.pickle — предсказания
+
 metrics_comparison.csv — MAPE по шагам
+
 Аналогично lstm.py
 ![image](https://github.com/user-attachments/assets/e4e60d9f-5be8-45f5-b158-9b876849d50c)
 
